@@ -1,0 +1,17 @@
+.thumb {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.tray-lead {
+    width: 200px;
+    height: 150px;
+    border: 1px black solid;
+}
+
+.team-tray {
+        display: inline-block;
+}
+
+

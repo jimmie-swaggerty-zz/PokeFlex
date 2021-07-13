@@ -1,0 +1,80 @@
+  .bg {
+    background-image: url('../imgs/pokeball-white.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position-x: 115%;
+    background-position-y: center;
+  }
+
+  .bg-default{
+    background-color:darkgray;
+    color: white;
+  }
+  .bg-small {
+    background-image: url('../imgs/pokeball-white.png');
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position-x: 105%;
+    background-position-y: center;
+  }
+
+  .bg-red {
+    background-color:red;
+    color: white;
+  }
+  
+  a.bg-red:hover {
+    background-color: tomato;
+  }
+
+  .card {
+    padding: 30px;
+    font-size: 90%;
+    border-radius: 10px;
+    text-align: left;
+    color: white;
+    margin: 5px 0px;
+    height: 175px;
+  }
+
+  .corners {
+    border-radius: 10px;
+  }
+  
+  h2 {
+    text-align: left;
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5px 0px;
+  }
+
+  label {
+    width: 150px;
+
+  }
+
+  .vertical-text {
+    transform: rotate(270deg);
+    width:max-content;
+    vertical-align: center;
+    }
+
+    .typetag {
+      display: inline-block;
+      padding: 5px;
+      margin: 0px 3px;
+      color: white;
+      border-radius: 5px;
+      font-size:x-small;
+    }
+
+    .hide {
+      display:none;
+    }
+
+    /* .genlist {
+      width: 48%;
+      display: inline-block;
+      margin: 10px;
+    } */
