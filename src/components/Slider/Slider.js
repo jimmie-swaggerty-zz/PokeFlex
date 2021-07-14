@@ -15,7 +15,7 @@ const Slider = (props) => {
     return (
         <div className="main">
             <div className="wrapper">
-                <a
+                <button
                     className="prev"
                     onClick={(e) => {
                         e.preventDefault();
@@ -23,15 +23,16 @@ const Slider = (props) => {
                     }}
                 >
                     &#10094;
-                </a>
+                </button>
                 <div className="image-container">
                     {pokemon.map((poke,idx) =>{
+                        let url = poke.url || `https://pokeapi.co/api/v2/pokemon/${poke.index}`
                         return(
-                           <PokeThumbSmall url={poke.url} className="image"/>
+                           <PokeThumbSmall url={url} className="image"/>
                         )
                     })}
                 </div>
-                <a
+                <button
                     className="next"
                     onClick={(e) => {
                         e.preventDefault();
@@ -39,7 +40,7 @@ const Slider = (props) => {
                     }}
                 >
                     &#10095;
-                </a>
+                </button>
             </div>
         </div>
     );

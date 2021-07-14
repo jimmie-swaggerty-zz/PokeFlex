@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 
 const Login = (props) => {
+    //const for form
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+
 
     const login = (event) => {
         event.preventDefault();
@@ -23,7 +25,7 @@ const Login = (props) => {
                 console.log(res.cookie);
                 console.log(res);
                 console.log(res.data, "is res data!");
-                setErrorMessage(res.data.message)
+                setErrorMessage(res.data.message);
             })
             .catch((err) => {
                 console.log(err.response);

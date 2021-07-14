@@ -1,10 +1,17 @@
 import React from 'react'
 
 const Header = (props) => {
-    const {title} = props;
+    const {title, subtitle, bg} = props;
     return (
-        <div>
-            <h2 className={"bg bg-default"}>{title}</h2>
+        <div className="container-flex header">
+            <div className={"row bg bg-default corners "+bg}>
+                <div className="col">
+            <h2 className="pokeheader">{title}</h2>
+            </div>
+                {subtitle && <div className="col">
+            <h2 className="header align-right">{subtitle}</h2>
+            </div>}
+        </div>
         </div>
     )
 }

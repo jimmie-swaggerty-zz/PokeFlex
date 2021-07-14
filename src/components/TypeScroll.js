@@ -19,18 +19,23 @@ const TypeScroll = (props) => {
 
     useEffect(() => {
         axios.get(url).then((res) => {
-            setGen(res.data.pokemon);
-            console.log("gen", res.data.pokemon);
+            let arr = res.data.pokemon.map((species, idx)=> {
+                return (
+                    species.pokemon
+                )
+            })
+            console.log("type", res.data);
             setLoaded(true);
+            setGen(arr)
+        // pokeprocess()
         });
     }, [url]);
-
     return (
         <div>
             {loaded && (
                 <div>
                     <div onClick={e=>{e.preventDefault();headerClick()}}>
-                    <Header title={title}/>
+                    <Header title={title} bg={title}/>
                     </div>
 {show && <Slider pokemon={gen}/>}
                 </div>

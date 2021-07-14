@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const PokeThumb = (props) => {
     const { id, url, name, shiney } = props;
     const [poke, setPoke] = useState([]);
@@ -46,31 +47,23 @@ const PokeThumb = (props) => {
     const sprites = poke.sprites;
     // const type = poke.types[0].type.name
     return (
-        <div className={"image bg corners bg-red"}>
-            {loaded && (
-                <div className="container-fluid">
-                    <div className="row">
-                        <p>{poke.name}</p>
+        <Link to={`/pokemon/${poke.id}`}>
+            <div className={"image bg corners bg-red"}>
+                {loaded && (
+                    <div className="container-fluid">
+                        <div className="row">
+                            <p>{poke.id} - {poke.name}</p>
+                        </div>
+                        <div className="row">
+                            <img
+                                src={sprites.front_default}
+                                // className="img-fluid"
+                            />
+                        </div>
                     </div>
-                    <div className="row">
-                        <img
-                            src={sprites.front_default}
-                            className="img-fluid"
-                        />
-                    </div>
-                    <div className="row">
-                        <button
-                            onClick={(e) => {
-                                e.preventDefault();
-                                clickHandler();
-                            }}
-                        >
-                            +
-                        </button>
-                    </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </Link>
     );
 };
 
