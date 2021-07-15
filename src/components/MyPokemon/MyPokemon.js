@@ -25,7 +25,6 @@ const MyPokemon = (props) => {
     return (
         <div className="container-fluid">
             <Header title="My Pokemon"/>
-            {!loaded && "My Pokemon module...hidden"}
             {loaded && <Slider pokemon={myPokes} title="My Pokemon" />}
         </div>
     );

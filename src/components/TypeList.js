@@ -18,7 +18,7 @@ const TypeList = (props) => {
 
     return (
         <div className="container-flex justify-content-between">
-            {types.map((type, idx) => {
+            {loaded && types.map((type, idx) => {
                     // console.log(type)
                     return (
                         <div key={idx} className="genlist">

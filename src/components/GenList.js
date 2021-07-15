@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Generations } from "../reference/Generations";
-import Header from "./Elements/Header";
+
 import GenScroll from "./GenScroll";
-import PokeGrid from "./PokeGrid";
+
 
 const GenList = (props) => {
     return (

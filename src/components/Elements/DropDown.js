@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 const DropDown = (props) => {
 const [open, setOpen]=useState(true)
-const {data, title, subdata} = props
+const {data, title} = props
 
 const clickHandler = (e) => {
     e.preventDefault();

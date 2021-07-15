@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Header from "../components/Elements/Header";
 import MyPokemon from "../components/MyPokemon/MyPokemon";
-import TeamTray from "../components/TeamBuilder/TeamTray";
 import LogReg from "../components/Login-Reg/LogReg";
-import PokeThumb from "../components/Elements/PokeThumb";
-import GenList from "../components/GenList";
+
 
 const Main = (props) => {
     const myPokes = [

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Components
@@ -11,6 +11,7 @@ import TypeList from "./components/TypeList";
 import "./App.css";
 import "./styles/templateStyle.css";
 import "./styles/types.css";
+import AllPokemon from "./views/AllPokemon";
 
 //Auth context
 export const AuthContext = React.createContext();
@@ -59,7 +60,9 @@ const App = () => {
                             <Route path="/pokemon/:id">
                                 <PokemonDetails />
                             </Route>
-                            <Route path="/pokemon/"></Route>
+                            <Route path="/pokemon/">
+                                <AllPokemon/>
+                            </Route>
                             <Route path="/generation">
                                 <GenList />
                             </Route>

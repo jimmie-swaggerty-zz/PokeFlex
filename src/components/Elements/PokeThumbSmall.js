@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const PokeThumb = (props) => {
+const PokeThumbSmall = (props) => {
     const { id, url, name, shiney } = props;
     const [poke, setPoke] = useState([]);
     const [loaded, setLoaded] = useState(false);
@@ -67,4 +67,4 @@ const PokeThumb = (props) => {
     );
 };
 
-export default PokeThumb;
+export default PokeThumbSmall;
