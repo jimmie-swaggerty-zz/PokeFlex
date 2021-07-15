@@ -7,8 +7,8 @@
   
   
   .image {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     font-size: small;
     /* background: blue; */
     margin: 10px;
@@ -28,7 +28,7 @@
     overflow-x: hidden ;
     overflow-y:hidden;
     width: 90%;
-    height: 160px;
+    height: inherit;
     vertical-align: middle;
   }
   
@@ -53,7 +53,7 @@
   }
   
   .wrapper {
-    height: 200px;
+    height: 230px;
     padding: 0px;
     vertical-align: top
   }
@@ -66,5 +66,11 @@
   }
 
   .controls{
+
 padding: 0px;
+  }
+
+  .poketitle{
+    text-align: center;
+    margin-top: 10px;
   }

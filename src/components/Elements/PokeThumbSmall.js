@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {BsSearch, BsLightningFill, BsFillStarFill, BsXSquareFill} from 'react-icons/bs';
 import axios from "axios";
 import { Link, navigate, useHistory } from "react-router-dom";
 const PokeThumbSmall = (props) => {
@@ -15,7 +16,7 @@ const PokeThumbSmall = (props) => {
             setSprites(res.data.sprites);
         });
     }, [apiURL]);
-    const history = useHistory()
+    const history = useHistory();
     const clickHandler = () => {
         axios
             .post(
@@ -27,7 +28,35 @@ const PokeThumbSmall = (props) => {
             )
             .then((res) => {
                 console.log(res.data);
-                setRefresh("added "+poke.name);
+                alert(`you added a ${poke.name} to your pokemon`)
+                setRefresh("added " + poke.name);
+            })
+            .catch((err) => {
+                //   if (err.response.status===401){
+                //       setAuthError("Please sign in to continue")
+                //   }
+                //   else if (err.response.status===403) {
+                //       setAuthError(err.response.data.message)
+                //     }
+                //   else{
+                //       setErrors(err.response.data.errors);
+                //   }
+                console.log("err", err);
+            });
+    };
+    const shineyClickHandler = () => {
+        axios
+            .post(
+                "http://localhost:8000/api/poke",
+                { index: poke.id, name: poke.name, shiney: true },
+                {
+                    withCredentials: true,
+                }
+            )
+            .then((res) => {
+                console.log(res.data);
+                alert(`you added a shiney ${poke.name} to your pokemon`)
+                setRefresh("added " + poke.name);
             })
             .catch((err) => {
                 //   if (err.response.status===401){
@@ -49,7 +78,8 @@ const PokeThumbSmall = (props) => {
             })
             .then((res) => {
                 console.log(res.data);
-                setRefresh("deleted "+poke.name);
+                alert(`you deleted ${poke.name} from your pokemon`)
+                setRefresh("deleted " + poke.name);
             })
             .catch((err) => {
                 //   if (err.response.status===401){
@@ -73,7 +103,7 @@ const PokeThumbSmall = (props) => {
             {loaded && (
                 <div className="container-fluid">
                     <div className="row">
-                        <p>
+                        <p className="poketitle">
                             {poke.id} - {poke.name}
                         </p>
                     </div>
@@ -91,7 +121,7 @@ const PokeThumbSmall = (props) => {
                                         clickHandler();
                                     }}
                                 >
-                                    +
+                                    <BsFillStarFill/>
                                 </button>
                             )}
                             {subtract && (
@@ -103,7 +133,7 @@ const PokeThumbSmall = (props) => {
                                         deleteHandler();
                                     }}
                                 >
-                                    -
+                                    <BsXSquareFill/>
                                 </button>
                             )}
 
@@ -115,8 +145,20 @@ const PokeThumbSmall = (props) => {
                                     history.push(`/pokemon/${poke.id}`);
                                 }}
                             >
-                                View
+                                <BsSearch/>
                             </button>
+                            {add && (
+                                <button
+                                    type="button"
+                                    className="btn btn-secondary"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        shineyClickHandler();
+                                    }}
+                                >
+                                    <BsLightningFill/>
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
