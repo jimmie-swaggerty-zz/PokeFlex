@@ -34,6 +34,9 @@ const NavBar = (props) => {
                             <NavLink className="nav-link" to="/type">By Type</NavLink>
                         </li>
                         <li>
+                        <NavLink className="nav-link" to="/mypokemon">My Pokemon</NavLink>
+                        </li>
+                        <li>
                         <NavLink className="nav-link" to="/login">Login</NavLink>
                         </li>
                     </ul>

@@ -25,7 +25,7 @@ const AllPokemon = (props) => {
                 <Header title="All Pokemon"/>
                 {loaded && pokes.map((species, idx)=>{
                     return(
-                        <PokeThumbSmall url={species.url} key={idx}/>
+                        <PokeThumbSmall url={species.url} key={idx} add={true}/>
                     )
                 })}
             </div>

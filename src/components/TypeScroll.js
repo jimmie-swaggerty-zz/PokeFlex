@@ -31,13 +31,13 @@ const TypeScroll = (props) => {
         });
     }, [url]);
     return (
-        <div>
+        <div id={title}>
             {loaded && (
                 <div>
                     <div onClick={e=>{e.preventDefault();headerClick()}}>
                     <Header title={title} bg={title}/>
                     </div>
-{show && <Slider pokemon={gen}/>}
+{show && <Slider pokemon={gen} divid={title} add={true}/>}
                 </div>
             )}
         </div>

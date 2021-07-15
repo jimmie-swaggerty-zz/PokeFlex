@@ -7,11 +7,13 @@ import Main from "./views/Main";
 import PokemonDetails from "./views/PokemonDetails";
 import GenList from "./components/GenList";
 import TypeList from "./components/TypeList";
+import MyPokemon from "./components/MyPokemon/MyPokemon";
 //Styles
 import "./App.css";
 import "./styles/templateStyle.css";
 import "./styles/types.css";
 import AllPokemon from "./views/AllPokemon";
+import AddPokemon from "./components/Elements/AddPokemon";
 
 //Auth context
 export const AuthContext = React.createContext();
@@ -68,6 +70,12 @@ const App = () => {
                             </Route>
                             <Route path="/type">
                                 <TypeList />
+                            </Route>
+                            <Route path="/mypokemon/add/:id">
+                                <AddPokemon/>
+                            </Route>
+                            <Route path="/mypokemon">
+                                <MyPokemon/>
                             </Route>
                             <Route path="/">
                                 <Main />

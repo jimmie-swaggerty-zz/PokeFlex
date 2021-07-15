@@ -28,7 +28,7 @@
     overflow-x: hidden ;
     overflow-y:hidden;
     width: 90%;
-    height: 120px;
+    height: 160px;
     vertical-align: middle;
   }
   
@@ -53,7 +53,18 @@
   }
   
   .wrapper {
-    height: 140px;
+    height: 200px;
     padding: 0px;
     vertical-align: top
+  }
+  
+  .expand {
+    color:black;
+    border: black solid 1px;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+
+  .controls{
+padding: 0px;
   }
